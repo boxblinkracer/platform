@@ -239,7 +239,10 @@ class PluginLifecycleService
 
         $pluginBaseClass->uninstall($uninstallContext);
 
-        if ($keepUserData === false) {
+        # remove any executed migration entries,
+        # depending on the command argument and the resulting
+        # context value after our pre-uninstall event
+        if ($uninstallContext->keepUserData() === false) {
             $this->removeMigrations($pluginBaseClass);
         }
 
