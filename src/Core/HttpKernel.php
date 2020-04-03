@@ -68,7 +68,7 @@ class HttpKernel
     {
         $this->classLoader = $classLoader;
         $this->environment = $environment;
-        $this->debug = $debug;
+        $this->debug = $debug; die('dangl');
     }
 
     public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true): HttpKernelResult
