@@ -24,7 +24,7 @@ use Shopware\Core\System\SalesChannel\SalesChannelEntity;
 class ProductPageSeoUrlRoute implements SeoUrlRouteInterface
 {
     public const ROUTE_NAME = 'frontend.detail.page';
-    public const DEFAULT_TEMPLATE = '{{ product.translated.name }}/{{ product.productNumber }}';
+    public const DEFAULT_TEMPLATE = '{{ product.translated.name|lower }}/{{ product.productNumber|lower }}';
 
     /**
      * @var ProductDefinition
